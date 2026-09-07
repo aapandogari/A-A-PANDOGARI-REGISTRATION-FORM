@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+AAP Core Team Admin Dashboard
+</title>
+
+
+<link rel="stylesheet" href="../css/admin.css">
+
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="container">
+
+
+
+<!-- HEADER -->
+
+<header>
+
+
+<div class="brand">
+
+
+<img 
+src="/logo/logo.png"
+class="logo"
+alt="AAP Logo">
+
+
+<div>
+
+<h1>
+AL-AWWAL PANDOGARI ECOSYSTEM
+</h1>
+
+
+<h2>
+CORE TEAM MANAGEMENT PORTAL
+</h2>
+
+
+</div>
+
+
+</div>
+
+
+
+<button 
+class="logout-btn"
+onclick="logout()">
+
+Logout
+
+</button>
+
+
+
+</header>
+
+
+
+
+
+
+
+<!-- STATISTICS -->
+
+<section class="cards">
+
+
+
+<div class="card">
+
+<h3>
+Total Applications
+</h3>
+
+<p id="total">
+0
+</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>
+Pending
+</h3>
+
+<p id="pending">
+0
+</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>
+Approved
+</h3>
+
+<p id="approved">
+0
+</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>
+Rejected
+</h3>
+
+<p id="rejected">
+0
+</p>
+
+</div>
+
+
+
+</section>
+
+
+
+
+<!-- APPLICATION CONTROL -->
+
+
+<section class="control-panel">
+
+
+
+<input
+
+id="search"
+
+type="text"
+
+placeholder="Search applicant name..."
+
+onkeyup="loadApplications()"
+
+
+
+>
+
+
+
+
+<select
+
+id="teamFilter"
+
+onchange="loadApplications()"
+
+>
+
+
+<option value="">
+
+All Teams
+
+</option>
+
+
+<option value="1">
+
+PI CORE TEAM
+
+</option>
+
+
+<option value="2">
+
+SIDRA CORE TEAM
+
+</option>
+
+
+
+</select>
+
+
+
+
+
+
+
+<select
+
+id="statusFilter"
+
+onchange="loadApplications()"
+
+>
+
+
+<option value="">
+
+All Status
+
+</option>
+
+
+<option value="Pending">
+
+Pending
+
+</option>
+
+
+<option value="Approved">
+
+Approved
+
+</option>
+
+
+<option value="Rejected">
+
+Rejected
+
+</option>
+
+
+</select>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- APPLICATION TABLE -->
+
+
+<section class="table-box">
+
+
+<table>
+
+
+<thead>
+
+
+<tr>
+
+
+<th>
+Applicant
+</th>
+
+
+
+<th>
+Team
+</th>
+
+
+
+<th>
+Username
+</th>
+
+
+
+<th>
+Status
+</th>
+
+
+
+<th>
+Action
+</th>
+
+
+
+</tr>
+
+
+
+</thead>
+
+
+
+<tbody id="applications">
+
+
+</tbody>
+
+
+
+</table>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- MEMBERS TABLE -->
+
+
+<section class="table-box">
+
+
+<h2>
+Core Team Members
+</h2>
+
+
+
+<table>
+
+
+<thead>
+
+
+<tr>
+
+
+<th>
+Name
+</th>
+
+
+<th>
+Team
+</th>
+
+
+<th>
+Username
+</th>
+
+
+<th>
+Status
+</th>
+
+
+<th>
+Action
+</th>
+
+
+</tr>
+
+
+</thead>
+
+
+
+<tbody id="members">
+
+
+</tbody>
+
+
+
+</table>
+
+
+</section>
+
+
+
+
+
+
+<!-- PROFILE MODAL -->
+
+
+<div
+
+id="modal"
+
+class="modal"
+
+
+>
+
+
+<div class="modal-box">
+
+
+
+<span
+
+class="close"
+
+onclick="closeModal()"
+
+>
+
+×
+
+</span>
+
+
+
+
+<!-- ===============================
+ADDED: SELFIE IMAGE VIEWER
+=============================== -->
+
+
+<div class="image-viewer">
+
+
+<img
+
+id="photo"
+
+alt="Applicant Selfie"
+
+onclick="openImageViewer(this.src)"
+
+>
+
+
+
+</div>
+
+
+
+
+
+<!-- ===============================
+ADDED: ID DOCUMENT VIEWER
+=============================== -->
+
+
+<div id="document-box">
+
+
+<h3>
+Identity Document
+</h3>
+
+
+<a
+
+id="documentLink"
+
+target="_blank"
+
+>
+
+<button>
+
+View Document
+
+</button>
+
+</a>
+
+
+</div>
+
+
+
+
+
+<h2 id="name">
+
+</h2>
+
+
+
+
+
+<p id="details">
+
+</p>
+
+
+
+
+
+
+
+<button
+
+onclick="approve(currentID)"
+
+>
+
+Approve
+
+</button>
+
+
+
+
+
+<button
+
+onclick="reject(currentID)"
+
+>
+
+Reject
+
+</button>
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- ===============================
+ADDED: FULL IMAGE VIEWER
+=============================== -->
+
+
+<div
+
+id="imageViewer"
+
+class="image-viewer-overlay"
+
+onclick="closeImageViewer()"
+
+>
+
+
+<img
+
+id="largeImage"
+
+>
+
+
+</div>
+
+
+
+
+<script src="../js/admin.js"></script>
+
+
+
+</body>
+
+
+</html>
