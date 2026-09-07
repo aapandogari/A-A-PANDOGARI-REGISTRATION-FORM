@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>
+Application Submitted
+</title>
+
+</head>
+
+
+<body>
+
+
+<h1>
+AL-AWWAL PANDOGARI ECOSYSTEM
+</h1>
+
+
+<h2>
+Application Submitted Successfully
+</h2>
+
+
+<p>
+Your Application ID:
+</p>
+
+
+<h2 id="appID"></h2>
+
+
+
+<p>
+
+Please keep this ID to check your application status.
+
+</p>
+
+
+
+<a href="status.html">
+
+Check Application Status
+
+</a>
+
+
+
+<script>
+
+
+const id =
+localStorage.getItem(
+"applicationID"
+);
+
+
+
+document.getElementById(
+"appID"
+).innerHTML=id;
+
+
+</script>
+
+
+</body>
+
+</html>
