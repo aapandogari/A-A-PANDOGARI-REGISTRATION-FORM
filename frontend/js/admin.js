@@ -7,7 +7,7 @@ VERCEL + RAILWAY READY
 
 const API =
 
-"https://YOUR-RAILWAY-BACKEND-URL.up.railway.app";
+"https://a-a-pandogari-reg-backend-production.up.railway.app";
 
 
 // Replace the URL above after deploying Railway.

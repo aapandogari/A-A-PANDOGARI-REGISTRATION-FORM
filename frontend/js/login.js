@@ -17,7 +17,7 @@ Railway API
 
 
 const API_URL =
-"https://YOUR-RAILWAY-BACKEND-URL.up.railway.app";
+"https://a-a-pandogari-reg-backend-production.up.railway.app";
 
 
 
@@ -142,7 +142,22 @@ data.token
 );
 
 
+const token =
+localStorage.getItem("adminToken");
 
+
+fetch(
+API_URL + "/api/admin/applications",
+{
+
+headers:{
+
+"Authorization":
+`Bearer ${token}`
+
+}
+
+});
 
 
 
@@ -150,7 +165,7 @@ data.token
 
 
 window.location.href =
-"admin.html";
+"../html/admin.html";
 
 
 
@@ -213,9 +228,31 @@ localStorage.getItem(
 if(token){
 
 
+function checkAdminLogin(){
+
+const token =
+localStorage.getItem("adminToken");
+
+
+if(!token){
+
+window.location.href =
+"login.html";
+
+return;
+
+}
+
+
 console.log(
 "Admin session active"
 );
+
+
+}
+
+
+checkAdminLogin();
 
 
 }
