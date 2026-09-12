@@ -84,12 +84,14 @@ headers:{
 
 body:JSON.stringify({
 
-email,
+username:email,
+
+email:email,
 
 password
 
 })
-
+  
 
 }
 
