@@ -17,7 +17,7 @@ Railway API
 
 
 const API_URL =
-"https://a-a-pandogari-reg-backend-production.up.railway.app";
+"https://a-a-pandogari-reg-backend-production.up.railway.app/api";
 
 
 

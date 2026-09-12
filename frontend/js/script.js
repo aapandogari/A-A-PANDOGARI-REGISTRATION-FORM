@@ -743,7 +743,7 @@ try{
 const response =
 await fetch(
 
-"http://a-a-pandogari-reg-backend-production.up.railway.app/api/core-team/apply",
+"https://a-a-pandogari-reg-backend-production.up.railway.app/api/registration",
 
 {
 
