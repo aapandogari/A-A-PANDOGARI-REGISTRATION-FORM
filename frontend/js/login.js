@@ -149,7 +149,7 @@ localStorage.getItem("adminToken");
 
 
 fetch(
-API_URL + "/api/admin/applications",
+API_URL + "/admin/applications",
 {
 
 headers:{

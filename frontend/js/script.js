@@ -650,11 +650,9 @@ formData.append(
 "skills",
 form.skills.value
 );
-
-
-formData.append(
+  valuemData.append(
 "experience",
-form.experience.value
+""
 );
 
 
@@ -796,14 +794,11 @@ result.message ||
 
 catch(error){
 
-
-console.error(error);
-
+console.error("REGISTRATION ERROR:", error);
 
 alert(
-"Server connection failed"
+"Registration Error: " + error.message
 );
-
 
 }
 
