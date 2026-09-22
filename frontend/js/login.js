@@ -64,7 +64,7 @@ const response =
 await fetch(
 
 API_URL +
-"/api/admin/login",
+"/admin/login",
 
 {
 
@@ -239,7 +239,7 @@ localStorage.getItem("adminToken");
 if(!token){
 
 window.location.href =
-"login.html";
+"../html/login.html";
 
 return;
 
