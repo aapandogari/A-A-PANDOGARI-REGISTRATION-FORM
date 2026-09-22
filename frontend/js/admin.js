@@ -767,7 +767,7 @@ localStorage.removeItem(
 
 
 window.location.href=
-"login.html";
+"../html/login.html";
 
 
 }

@@ -773,7 +773,7 @@ result.applicationID
 
 
 window.location.href =
-"success.html";
+"../html/success.html";
 
 
 }
