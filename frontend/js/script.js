@@ -13,213 +13,17 @@ document.addEventListener("DOMContentLoaded",()=>{
 // COUNTRY DROPDOWN
 // ===============================
 
+if (countrySelect) {
 
-const countrySelect =
-document.getElementById("country");
+        countrySelect.addEventListener("change", () => {
 
+            if (countrySelect.value !== "") {
+                countrySelect.style.color = "#000";
+            }
 
+        });
 
-const countries = [
-
-"Algeria",
-"Angola",
-"Benin",
-"Botswana",
-"Burkina Faso",
-"Burundi",
-"Cabo Verde",
-"Cameroon",
-"Central African Republic",
-"Chad",
-"Comoros",
-"Democratic Republic of the Congo",
-"Republic of the Congo",
-"Cote d'Ivoire",
-"Djibouti",
-"Egypt",
-"Equatorial Guinea",
-"Eritrea",
-"Eswatini",
-"Ethiopia",
-"Gabon",
-"Gambia",
-"Ghana",
-"Guinea",
-"Guinea-Bissau",
-"Kenya",
-"Lesotho",
-"Liberia",
-"Libya",
-"Madagascar",
-"Malawi",
-"Mali",
-"Mauritania",
-"Mauritius",
-"Morocco",
-"Mozambique",
-"Namibia",
-"Niger",
-"Nigeria",
-"Rwanda",
-"Sao Tome and Principe",
-"Senegal",
-"Seychelles",
-"Sierra Leone",
-"Somalia",
-"South Africa",
-"South Sudan",
-"Sudan",
-"Tanzania",
-"Togo",
-"Tunisia",
-"Uganda",
-"Zambia",
-"Zimbabwe",
-
-"Afghanistan",
-"Armenia",
-"Azerbaijan",
-"Bahrain",
-"Bangladesh",
-"Bhutan",
-"Brunei",
-"Cambodia",
-"China",
-"Cyprus",
-"Georgia",
-"India",
-"Indonesia",
-"Iran",
-"Iraq",
-"Israel",
-"Japan",
-"Jordan",
-"Kazakhstan",
-"Kuwait",
-"Kyrgyzstan",
-"Laos",
-"Lebanon",
-"Malaysia",
-"Maldives",
-"Mongolia",
-"Myanmar",
-"Nepal",
-"North Korea",
-"Oman",
-"Pakistan",
-"Palestine",
-"Philippines",
-"Qatar",
-"Saudi Arabia",
-"Singapore",
-"South Korea",
-"Sri Lanka",
-"Syria",
-"Taiwan",
-"Tajikistan",
-"Thailand",
-"Timor-Leste",
-"Turkey",
-"Turkmenistan",
-"United Arab Emirates",
-"Uzbekistan",
-"Vietnam",
-"Yemen",
-
-"Albania",
-"Andorra",
-"Austria",
-"Belarus",
-"Belgium",
-"Bosnia and Herzegovina",
-"Bulgaria",
-"Croatia",
-"Czech Republic",
-"Denmark",
-"Estonia",
-"Finland",
-"France",
-"Germany",
-"Greece",
-"Hungary",
-"Iceland",
-"Ireland",
-"Italy",
-"Latvia",
-"Lithuania",
-"Luxembourg",
-"Malta",
-"Moldova",
-"Monaco",
-"Montenegro",
-"Netherlands",
-"North Macedonia",
-"Norway",
-"Poland",
-"Portugal",
-"Romania",
-"Russia",
-"Serbia",
-"Slovakia",
-"Slovenia",
-"Spain",
-"Sweden",
-"Switzerland",
-"Ukraine",
-"United Kingdom",
-
-"Argentina",
-"Brazil",
-"Canada",
-"Chile",
-"Colombia",
-"Costa Rica",
-"Cuba",
-"Dominican Republic",
-"Ecuador",
-"Guatemala",
-"Haiti",
-"Honduras",
-"Jamaica",
-"Mexico",
-"Panama",
-"Paraguay",
-"Peru",
-"United States",
-"Uruguay",
-"Venezuela",
-
-"Australia",
-"Fiji",
-"New Zealand",
-"Papua New Guinea"
-
-];
-
-
-
-if(countrySelect){
-
-countries.forEach(country=>{
-
-
-const option =
-document.createElement("option");
-
-
-option.value = country;
-
-
-option.textContent = country;
-
-
-countrySelect.appendChild(option);
-
-
-});
-
-
-}
+    }
 
 
 
@@ -650,11 +454,7 @@ formData.append(
 "skills",
 form.skills.value
 );
-  valuemData.append(
-"experience",
-""
-);
-
+  
 
 formData.append(
 "value",
