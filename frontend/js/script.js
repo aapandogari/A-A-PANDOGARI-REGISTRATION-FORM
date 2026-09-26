@@ -7,7 +7,7 @@
 
 document.addEventListener("DOMContentLoaded",()=>{
 
-
+const countrySelect = document.getElementById("country");
 
 // ===============================
 // COUNTRY DROPDOWN
@@ -582,7 +582,7 @@ result.applicationID
 );
 
 
-window.location.replace("../html/success.html");
+window.location.replace("success.html");
 
 
 }
