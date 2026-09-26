@@ -582,7 +582,7 @@ result.applicationID
 );
 
 
-window.location.replace("success.html");
+window.location.replace("../html/success.html");
 
 
 }
