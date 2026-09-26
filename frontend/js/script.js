@@ -68,10 +68,12 @@ usernameBox.style.display="block";
 
 if(allUsernameBox)
 allUsernameBox.style.display="none";
+  
 
-
-if(username)
+if(username){
 username.required=true;
+username.disabled=false;
+}
 
 
 
@@ -106,21 +108,32 @@ username.dataset.type =
 
 
 
-
 function showAllUsername(){
-
 
 if(usernameBox)
 usernameBox.style.display="none";
-
 
 if(allUsernameBox)
 allUsernameBox.style.display="block";
 
 
+const piUsername =
+document.getElementById("piUsername");
+
+const sidraUsername =
+document.getElementById("sidraUsername");
+
+
+if(piUsername)
+piUsername.required=true;
+
+
+if(sidraUsername)
+sidraUsername.required=true;
+
+
 if(username)
 username.required=false;
-
 
 }
 
@@ -569,9 +582,7 @@ result.applicationID
 );
 
 
-
-window.location.href =
-"../html/success.html";
+window.location.replace("success.html");
 
 
 }

@@ -45,7 +45,7 @@ const response =
 await fetch(
 
 API+
-"/api/admin/applications",
+"/admin/applications",
 
 {
 
@@ -596,7 +596,7 @@ await fetch(
 
 API+
 
-"/api/admin/applications/"
+"/admin/applications/"
 
 +
 
@@ -675,7 +675,7 @@ await fetch(
 
 API+
 
-"/api/admin/applications/"
+"/admin/applications/"
 
 +
 
